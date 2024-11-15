@@ -18,27 +18,38 @@ To replicate the experiments, download the pre-trained model checkpoint from [he
    ```bash
    git clone https://github.com/YoonChiHo/MTFormer /{target_folder}
 2. **Download Model Parameters**
-Download the model parameters from the [Link]([https://medmnist.com/v1](https://1drv.ms/u/c/de011cb09ae2716d/EeussqGxjNVAjqhqHaPiJLUBgPJClEG2VUipONG1GnsaUw?e=vqgNdp)), extract them, and place the logs folder in the same directory as MTFormer.
+Download the model parameters from the [Link]([https://medmnist.com/v1](https://1drv.ms/u/c/de011cb09ae2716d/EeussqGxjNVAjqhqHaPiJLUBgPJClEG2VUipONG1GnsaUw?e=vqgNdp))  
+Extract them, and place the logs folder in the same directory as MTFormer.  
 
-3. **Set Up Docker Environment**
-Install Docker from docker.com if not already installed. Run the following commands to create and access a Docker container:  
-- Create Docker container: 'docker run -dit --name run_mtformer --gpus all --shm-size 256g -v /{target_folder}:/workspace pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel'
-- Attach to Docker container: 'docker attach run_mtformer'
+4. **Set Up Docker Environment**
+Install Docker from docker.com if not already installed.
+Run the following commands to create and access a Docker container: 
+- Create Docker container: 
+   ```bash
+   docker run -dit --name run_mtformer --gpus all --shm-size 256g -v /{target_folder}:/workspace pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
+- Attach to Docker container:
+   ```bash
+   docker attach run_mtformer'
   
 4. **Data Preprocessing**
-Use public_preprocess.py to preprocess the HAM10000 dataset ([DermaMNIST](https://medmnist.com/v1)), which can be downloaded from MedMNIST. The script will convert the dataset into a PNG image format and split it into train and test sets.
+Use public_preprocess.py to preprocess the HAM10000 dataset ([DermaMNIST](https://medmnist.com/v1)), which can be downloaded from MedMNIST.
+The script will convert the dataset into a PNG image format and split it into train and test sets.  
+   ```bash
+   python public_preprocess.py
 
-5. **Install Required Packages**
+6. **Install Required Packages**
 Navigate to the MTFormer folder and install the necessary packages for inference:  
-'pip install -r MTFormer/requirements.txt'
+   ```bash
+   pip install -r MTFormer/requirements.txt
 
-6. **Run Sample Code**
+7. **Run Sample Code**
 Use the following sample code for inference, where Class 0 is set as Abnormal and the remaining classes are set as Normal:  
-'python MTFormer/main.py \
--t mtformer --result_dir "logs/derma_c3_0" \
---att_h 3 --att_l 0 1 2 --num_layer 3 \
---input_size 32 -e_svdd 100 --in_channels 3 \
---data_dir "data/derma" -n 1 2 3 4 5 6 -an 0'
+   ```bash
+   python MTFormer/main.py \
+   -t mtformer --result_dir "logs/derma_c3_0" \
+   --att_h 3 --att_l 0 1 2 --num_layer 3 \
+   --input_size 32 -e_svdd 100 --in_channels 3 \
+   --data_dir "data/derma" -n 1 2 3 4 5 6 -an 0
 
 References
 1. Yang, Jiancheng, et al. "Medmnist v2-a large-scale lightweight benchmark for 2d and 3d biomedical image classification." Scientific Data 10.1 (2023): 41.
