@@ -1,6 +1,6 @@
 
 docker run -dit --name run_mtformer  --gpus all --shm-size 256g \
--v /home2/89douner/241022_SK2/241115_gitupload:/workspace \
+-v /{target_folder}:/workspace \
 pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
 docker attach run_mtformer
 
