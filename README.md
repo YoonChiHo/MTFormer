@@ -51,12 +51,13 @@ Use the following sample code for inference, where Class 0 is set as Abnormal an
    --input_size 32 -e_svdd 100 --in_channels 3 \
    --data_dir "data/derma" -n 1 2 3 4 5 6 -an 0
 8. ""Additional Experiments""
-Change the `result_dir` and normal setting (`-n`) and abnormal setting (`-an`) to get results for multiple classes.
-Please check `run_mtformer.sh`
+Change the `result_dir` and normal setting (`-n`) and abnormal setting (`-an`) to get results for multiple classes.  
+Please check `run_mtformer.sh`  
 
 References
-1. Yang, Jiancheng, et al. "Medmnist v2-a large-scale lightweight benchmark for 2d and 3d biomedical image classification." Scientific Data 10.1 (2023): 41.
-2. Philipp Tschandl, Cliff Rosendahl, and Harald Kittler, "The HAM10000 dataset, a large collection of multisource dermatoscopic images of common pigmented skin lesions," Scientific Data, vol. 5, pp. 180161, 2018.
-3. Noel Codella, Veronica Rotemberg, et al.: “Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)”, 2018; arXiv:1902.03368.
+1. Yang, Jiancheng, et al. "Medmnist v2-a large-scale lightweight benchmark for 2d and 3d biomedical image classification." Scientific Data 10.1 (2023): 41.  
+2. Philipp Tschandl, Cliff Rosendahl, and Harald Kittler, "The HAM10000 dataset, a large collection of multisource dermatoscopic images of common pigmented skin lesions,"
+ Scientific Data, vol. 5, pp. 180161, 2018.  
+3. Noel Codella, Veronica Rotemberg, et al.: “Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)”, 2018; arXiv:1902.03368.  
 4. [MedMNIST](https://medmnist.com/v1)
 
