@@ -50,7 +50,7 @@ Use the following sample code for inference, where Class 0 is set as Abnormal an
    --att_h 3 --att_l 0 1 2 --num_layer 3 \
    --input_size 32 -e_svdd 100 --in_channels 3 \
    --data_dir "data/derma" -n 1 2 3 4 5 6 -an 0
-8. ""Additional Experiments""
+8. **Additional Experiments**
 Change the `result_dir` and normal setting (`-n`) and abnormal setting (`-an`) to get results for multiple classes.  
 Please check `run_mtformer.sh`  
 
