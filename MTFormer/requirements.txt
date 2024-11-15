@@ -1,0 +1,10 @@
+easydict
+torch
+Pillow
+albumentations
+torchvision
+matplotlib
+pandas
+openpyxl
+einops
+scikit-learn
